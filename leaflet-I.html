@@ -1,0 +1,473 @@
+<html>
+
+<head>
+  <title>Lealfte-I</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a target="_self" class="navbar-brand" href="index.html">
+            Inicio
+        </a>
+    <span> Introducción a Leaflet </span>
+  </nav>
+  <div class="container">
+    <h5>Introducción a Leaflet </h5>
+    <a href="http://leafletjs.com/" target="_blank">
+            <img width=100 src="http://leafletjs.com/docs/images/logo.png">
+        </a>
+
+    <div class="alert alert-warning">
+      <h5>  Recursos Leaflet JS</h5>
+  <ul>
+<li>
+Web<br>
+<a target="_blank" href="http://leafletjs.com/">http://leafletjs.com/</a>
+</li>
+<li>
+  API<br>
+  <a target="_blank" href="http://leafletjs.com/reference.html">http://leafletjs.com/reference.html</a>
+</li>
+<li>
+ Plugins<br>
+  <a target="_blank" href="http://leafletjs.com/plugins.html">http://leafletjs.com/plugins.html</a>
+</li>
+<li>
+ Definición<br>
+  <a target="_blank" href="https://en.wikipedia.org/wiki/Leaflet_(software)">https://en.wikipedia.org/wiki/Leaflet_(software)</a>
+</li>
+<li>
+  Tutoriales<br>
+  <a target="_blank" href="http://www.digital-geography.com/category/leaflet-js/">http://www.digital-geography.com/category/leaflet-js/</a><br>
+  <a target="_blank" href="http://leafletjs.com/examples.html">http://leafletjs.com/examples.html</a><br>
+  <a target="_blank" href="http://maptimeboston.github.io/leaflet-intro/">http://maptimeboston.github.io/leaflet-intro/</a><br>
+  <a target="_blank" href="http://asmaloney.com/2014/01/code/creating-an-interactive-map-with-leaflet-andopenstreetmap/">http://asmaloney.com/2014/01/code/creating-an-interactive-map-with-leaflet-andopenstreetmap/</a><br>
+  <a target="_blank" href="http://mappinggis.com/2013/06/como-crear-un-mapa-con-leaflet/">http://mappinggis.com/2013/06/como-crear-un-mapa-con-leaflet/</a>
+</li>
+<li>
+Videos<br>
+  <a target="_blank" href="https://www.youtube.com/watch?v=7Tll2k57ork">https://www.youtube.com/watch?v=7Tll2k57ork</a><br>
+  <a target="_blank" href="https://egghead.io/lessons/javascript-get-started-with-leafletjs-mapping">https://egghead.io/lessons/javascript-get-started-with-leafletjs-mapping</a><br>
+  <a target="_blank" href="https://www.youtube.com/watch?v=1VYvjHb6KeM">https://www.youtube.com/watch?v=1VYvjHb6KeM</a><br>
+  <a target="_blank" href="https://www.youtube.com/watch?v=TseoObyFg8E">https://www.youtube.com/watch?v=TseoObyFg8E</a>
+</li>
+</ul>
+</div>
+
+
+
+
+
+        <div class="soft">
+            <h5>Descripción</h5>
+            Leaflet es una librería JavaScript opensource utilizada por Flickr, Wikimedia, foursquare, OSM, carto, GIS Cloud, Washington
+            Post, Wall Street Journal, Geocaching.com, etc. Puntos fuertes de la API de Leaflet son:
+            <ul>
+                <li> Facilidad para aprender y usar</li>
+                <li> Soporte móvil</li>
+                <li> HTML 5, CSS3 y pasarela WebGL</li>
+                <li> Funciona tanto en los modernos como en los viejos navegadores web</li>
+                <li> Muchos plugins</li>
+                <li> API bien documentada</li>
+            </ul>
+            <h5> ¿Cómo empezar?</h5>
+			Descargar <a href="datos/web.zip">web.zip</a> y descomprimir dentro de
+          nuestro directorio del servidor web
+            Abrimos nuestro editor de text i creamos la página
+            <b>Ejemplo0.html</b> dentro directorio web<br>
+            Añadiremos el siguiente código que es la estructura básica de una página :
+
+            <pre><code class="prettyprint">
+
+            &#x3C;html lang="es"&#x3E;
+            &#x3C;head&#x3E;
+            &#x3C;title>Ejemplo 0 Leaflet&#x3C;/title&#x3E;
+              &#x3C;meta charset="utf-8" /&#x3E;
+              &#x3C;meta name="viewport" content="width=device-width, initial-scale=1.0"&#x3E;
+              &#x3C;meta name="author" content="autor"/&#x3E;
+              &#x3C;meta name="description" content="descripción página"&#x3E;
+              &#x3C;meta name="robots" content="index,follow"&#x3E;
+            &#x3C;/head&#x3E;
+            &#x3C;body>
+            &#x3C;/body>
+            &#x3C;/html>
+        </code></pre> Vamos a crear un mapa con Leaflet, para ello incluiremos en la cabecera
+            <b>&#x3C;head&#x3E;</b> de una página web la librería JavaScript leaflet.js (que contiene el código de la libería)
+            y la hoja de estilo leaflet.css (con la hoja de estilos de la librería):
+            <pre><code class="prettyprint">
+                &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.css&#x22; /&#x3E;
+                &#x3C;script src=&#x22;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.js&#x22;&#x3E;&#x3C;/script&#x3E;
+            </code></pre> Dentro de la etiqueta
+            <b>&#x3C;body&#x3E;</b> encontramos el marcado para el mapa, que genera un único elemento de documento. También
+            damos al contenedor un atributo id para que podamos hacer referencia a él en nuestro código:
+
+            <pre><code class="prettyprint">
+                    &#x3C;body&#x3E;
+                    &#x3C;div id=&#x22;map&#x22;&#x3E;&#x3C;/div&#x3E;
+                    &#x3C;/body&#x3E;
+                    &#x3C;html lang=&#x22;es&#x22;&#x3E;
+                    &#x3C;head&#x3E;
+                    &#x3C;title&#x3E;Ejemplo 0 Leaflet&#x3C;/title&#x3E;
+                      &#x3C;meta charset=&#x22;utf-8&#x22; /&#x3E;
+                      &#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;&#x3E;
+                      &#x3C;meta name=&#x22;author&#x22; content=&#x22;autor&#x22;/&#x3E;
+                      &#x3C;meta name=&#x22;description&#x22; content=&#x22;descripci&#xF3;n p&#xE1;gina&#x22;&#x3E;
+                      &#x3C;meta name=&#x22;robots&#x22; content=&#x22;index,follow&#x22;&#x3E;
+                      &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.css&#x22; /&#x3E;
+                      &#x3C;script src=&#x22;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.js&#x22;&#x3E;&#x3C;/script&#x3E;
+                    &#x3C;/head&#x3E;
+                    &#x3C;body&#x3E;
+                    &#x3C;div id=&#x22;map&#x22;&#x3E;&#x3C;/div&#x3E;
+                    &#x3C;/body&#x3E;
+                    &#x3C;/html&#x3E;
+        </code></pre> Añadiremos un estilo al mapa para que ocupe toda la página web, dentro la etiqueta
+            <pre><code class="prettyprint">
+                    &#x3C;style&#x3E;
+                            body {
+                              margin: 0;
+                              padding: 0;
+                              overflow: hidden;
+                            }
+                            #map {
+                              height: 100%;
+                              width: 100%;
+                            }
+                     &#x3C;/style&#x3E;
+             </code></pre> Ahora empezaremos a programas dentro del tag <b> &#x3C;script&#x3E; </b><br>
+             Crearemos la función Init para crear un Mapa
+            y añadir una capa de OSM L.map es la clase central de la API.<br>
+             Se usa para crear y manipular el mapa. <br>
+             El mapa por defecto tiene dos controles: uno de zoom y uno de atribución.<br>
+
+  <br><h5>Ejemplo 0 Básico</h5>
+            <pre><code class="prettyprint">
+            &#x3C;html lang=&#x22;es&#x22;&#x3E;
+            &#x3C;head&#x3E;
+            &#x3C;title&#x3E;Ejemplo 0 Leaflet&#x3C;/title&#x3E;
+              &#x3C;meta charset=&#x22;utf-8&#x22; /&#x3E;
+              &#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;&#x3E;
+              &#x3C;meta name=&#x22;author&#x22; content=&#x22;autor&#x22;/&#x3E;
+              &#x3C;meta name=&#x22;description&#x22; content=&#x22;descripci&#xF3;n p&#xE1;gina&#x22;&#x3E;
+              &#x3C;meta name=&#x22;robots&#x22; content=&#x22;index,follow&#x22;&#x3E;
+              &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.css&#x22; /&#x3E;
+            &#x3C;style&#x3E;
+            body {
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+            }
+            #map {
+              height: 100%;
+              width: 100%;
+            }
+            &#x3C;/style&#x3E;
+            &#x3C;script src=&#x22;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.js&#x22;&#x3E;&#x3C;/script&#x3E;
+            &#x3C;script&#x3E;
+            var map,capa1;
+            function init(){
+                map = L.map(&#x27;map&#x27;,{
+                center:[41.6863, 1.8382],
+                zoom:8
+                });
+                capa1= L.tileLayer(&#x27;http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&#x27;,
+                {
+                maxZoom : 19,
+                minZoom : 1,
+                attribution : &#x27;OSM&#x27;
+                });
+                capa1.addTo(map);
+            }
+            &#x3C;/script&#x3E;
+            &#x3C;/head&#x3E;
+            &#x3C;body onLoad=&#x22;init()&#x22;&#x3E;
+            &#x3C;div id=&#x22;map&#x22;&#x3E;&#x3C;/div&#x3E;
+            &#x3C;/body&#x3E;
+            &#x3C;/html&#x3E;
+        </code></pre>
+        <div class="footnote">
+            <h5><a target="_blank" href="ejemplo0.html" >Ver Ejemplo 0 </a></h5>
+        </div>
+        ¿Que acabamos de hacer? Miramos dentro del tag &#x3C;script&#x3E;
+            <ul>
+                <li>Hemos creado la variable global <b>map</b></li>
+                <li>Usamos <b>L.map()</b> para instanciar el objeto mapa, pasando el id del &#x3C;div&#x3E; dónde irá el mapa</li>
+                <li>Utilizamos las opciones center y zoom iniciar el mapa También podríamos utilizar el método<br>
+                   <b>setView map =L.map('map').setView([41.6863, 1.8382], 8);)</b></li>
+                <li> Usamos <b>L.tileLayer()</b> para crear una capa base en un servidor OSM de tiles. {z}/{x}/{y}. También pasamos algunas
+                    opciones <br>Attribution : atribución de la capa <br>maxZoom y minZoom :niveles de zoom.</li>
+                <li>Usamos método addTo() para añadir la capa al mapa</li>
+                <li>Si quisieramos añadir un punto:</br>
+                    <pre><code class="prettyprint">
+                      L.marker([41.3954, 2.16859]).addTo(map)
+                        .bindPopup('Hola punto')
+                        .openPopup();
+                  </code></pre>
+                  </li>
+                  <li>Si quisieramos añadir un punto con estilo al hacer clic en el mapa(Evento):</br>
+                      <pre><code class="prettyprint">
+                          map.on('click',function(e){
+                              new L.circleMarker(e.latlng, {
+                                       color: '#ffffff',
+                                       fillColor: '#00ff00',
+                                       fillOpacity: 0.9,
+                                       radius: 8
+                                     }).addTo(map)
+                                .bindPopup(e.latlng.lat+","+ e.latlng.lng)
+                                .openPopup();
+                          });
+                    </code></pre>
+
+                    </li>
+
+
+            </ul>
+
+
+            <h5>Ejemplo 1 Controles</h5>
+            Añadimos controles de capas y escala.
+            <pre><code class="prettyprint">
+              &lt;html lang="es"&gt;
+              &lt;head&gt;
+                &lt;title&gt;Ejemplo 1 Leaflet-controles&lt;/title&gt;
+                &lt;meta charset="utf-8" /&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                &lt;meta name="author" content="autor" /&gt;
+                &lt;meta name="description" content="descripción página"&gt;
+                &lt;meta name="robots" content="index,follow"&gt;
+                &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.css" /&gt;
+                &lt;style&gt;
+                  body {
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                  }
+                  #map {
+                    height: 100%;
+                    width: 100%;
+                  }
+                &lt;/style&gt;
+                &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.js"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  var map, osm, esri, nubes;
+                  var controlCapas;
+                  var controlEscala;
+
+                  function init() {
+                    map = L.map('map').setView([41.6863, 1.8382], 8);
+                    esri = L.tileLayer(
+                      'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                        maxZoom: 17,
+                        minZoom: 1,
+                        attribution: 'Tiles © Esri',
+                      }).addTo(map);
+                    osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                      maxZoom: 19,
+
+                      minZoom: 1,
+                      attribution: 'OSM'
+                    });
+                    nubes =
+                      L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: 'OpenWeatherMap',
+                        opacity: 0.5
+                      });
+                    var baseMaps = {
+                      "Orto_esri": esri,
+                      "Mapa_osm": osm
+                    };
+                    var overlayMaps = {
+                      "Mapagris": nubes
+                    };
+                    controlCapas = L.control.layers(baseMaps, overlayMaps);
+                    controlCapas.addTo(map);
+                    controlEscala = L.control.scale();
+                    controlEscala.addTo(map);
+                  }
+                &lt;/script&gt;
+              &lt;/head&gt;
+
+              &lt;body onLoad="init()"&gt;
+                &lt;div id="map"&gt;&lt;/div&gt;
+              &lt;/body&gt;
+              &lt;/html&gt;
+
+        </code></pre>
+
+        <div class="footnote">
+            <h5><a target="_blank" href="ejemplo1.html" >Ver Ejemplo 1 </a></h5>
+        </div>
+            <h5>Ejemplo 2 Provider</h5>
+            ¿Que mapas de fondo puedo añadir?
+            <a target="_blank" href="http://leaflet-extras.github.io/leaflet-providers/preview/">http://leaflet-extras.github.io/leaflet-providers/preview/</a>
+
+            <pre><code class="prettyprint">
+              &lt;html lang="es"&gt;
+              &lt;head&gt;
+                &lt;title&gt;Ejemplo 2 Leaflet provider&lt;/title&gt;
+                &lt;meta charset="utf-8" /&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                &lt;meta name="author" content="autor" /&gt;
+                &lt;meta name="description" content="descripción página"&gt;
+                &lt;meta name="robots" content="index,follow"&gt;
+                &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.css" /&gt;
+                &lt;style&gt;
+                  body {
+                    margin: 0;
+                  }
+
+                  #map {
+                    height: 100%;
+                    width: 100%;
+                    background-color: #ffffff
+                  }
+                &lt;/style&gt;
+                &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.js"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  var map, osm, controlCapas;
+
+                  function init() {
+                    map = L.map('map', {
+                      center: [39.6863, 2.8382],
+                      zoom: 8
+                    });
+                    osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                      maxZoom: 19,
+
+                      minZoom: 1,
+                      attribution: '&copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt;'
+                    }).addTo(map);
+                    var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bwmapnik/{z}/{x}/{y}.png', {
+                      attribution: '&copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt;'
+                    });
+                    var OpenStreetMap_DE =
+                      L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+                        attribution: '&copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt;'
+                      });
+                    var OpenStreetMap_HOT = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+                      attribution: '&copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt;, Tiles courtesy of &lt;a href="http://hot.openstreetmap.org/" target="_blank"&gt;Humanitarian OpenStreetMapTeam&lt;/a&gt;'
+                    });
+                    var Thunderforest_OpenCycleMap =
+                      L.tileLayer('http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png', {
+                        attribution: '&copy; &lt;a href="http://www.opencyclemap.org"&gt;OpenCycleMap&lt;/a&gt;,&copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt;'
+                      });
+                    var Thunderforest_Transport =
+                      L.tileLayer('http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png', {
+                        attribution: '&copy; &lt;a href="http://www.opencyclemap.org"&gt;OpenCycleMap&lt;/a&gt;, &copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt;'
+                      });
+                    var Thunderforest_TransportDark = L.tileLayer('http://{s}.tile.thunderforest.com/transportdark/{z}/{x}/{y}.png', {
+                      attribution: '&copy; &lt;a href="http://www.opencyclemap.org"&gt;OpenCycleMap&lt;/a&gt;,&copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt;'
+                    });
+                    var OpenMapSurfer_Roads = L.tileLayer('http://openmapsurfer.unihd.de/tiles/roads/x={x}&y={y}&z={z}', {
+                      minZoom: 0,
+                      maxZoom: 20,
+
+                      attribution: 'Imagery from &lt;a href="http://giscience.uni-hd.de/"&gt;GIScience Research Group @ University of Heidelberg&lt;/a&gt; &mdash; Map data &copy; &lt;ahref="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt;'
+                    });
+                    var Hydda_Base = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/base/{z}/{x}/{y}.png', {
+                      minZoom: 0,
+                      maxZoom: 18,
+                      attribution: 'Tiles courtesy of &lt;a href="http://openstreetmap.se/" target="_blank"&gt;OpenStreetMap Sweden&lt;/a&gt; &mdash; Map data &copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt;'
+                    });
+                    var MapQuestOpen_Aerial =
+                      L.tileLayer('http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg', {
+                        attribution: 'Tiles Courtesy of &lt;a href="http://www.mapquest.com/"&gt;MapQuest&lt;/a&gt; &mdash; Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm ServiceAgency',
+                        subdomains: '1234'
+                      });
+                    var Stamen_Toner = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+                      attribution: 'Map tiles by &lt;a href="http://stamen.com"&gt;Stamen Design&lt;/a&gt;, &lt;a href="http://creativecommons.org/licenses/by/3.0"&gt;CC BY 3.0&lt;/a&gt; &mdash; Map data &copy;&lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt;',
+                      subdomains: 'abcd',
+                      minZoom: 0,
+                      maxZoom: 20
+                    });
+                    var Stamen_Watercolor = L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
+                      attribution: 'Map tiles by &lt;a href="http://stamen.com"&gt;Stamen Design&lt;/a&gt;, &lt;a href="http://creativecommons.org/licenses/by/3.0"&gt;CC BY 3.0&lt;/a&gt; &mdash; Map data &copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt;',
+                      subdomains: 'abcd',
+                      minZoom: 1,
+                      maxZoom: 16
+                    });
+                    var Esri_WorldStreetMap =
+                      L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+                        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS,Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom,2012'
+                      });
+
+                    var Esri_WorldTopoMap =
+                      L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+                        attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap,iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, EsriChina (Hong Kong), and the GIS User Community'
+                      });
+                    var Esri_WorldImagery =
+                      L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX,GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+                      });
+                    var Esri_WorldShadedRelief =
+                      L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
+                        attribution: 'Tiles &copy; Esri &mdash; Source: Esri',
+                        maxZoom: 13
+                      });
+                    var Esri_OceanBasemap =
+                      L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}', {
+                        attribution: 'Tiles &copy; Esri &mdash; Sources: GEBCO, NOAA, CHS, OSU, UNH,CSUMB, National Geographic, DeLorme, NAVTEQ, and Esri',
+                        maxZoom: 13
+                      });
+                    var Acetate_all = L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetatehillshading/{z}/{x}/{y}.png', {
+                      attribution: '&copy;2012 Esri & Stamen, Data from OSM and Natural Earth',
+                      subdomains: '0123',
+                      minZoom: 2,
+                      maxZoom: 18
+                    });
+                    var MtbMap = L.tileLayer('http://tile.mtbmap.cz/mtbmap_tiles/{z}/{x}/{y}.png', {
+                      attribution: '&copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; &amp; USGS'
+                    });
+
+                    var mapaBase = {
+                      'OSM': osm,
+                      'OpenStreetMap_BlackAndWhite': OpenStreetMap_BlackAndWhite,
+                      'OpenStreetMap_DE': OpenStreetMap_DE,
+                      'OpenStreetMap_HOT': OpenStreetMap_HOT,
+                      'Thunderforest_OpenCycleMap': Thunderforest_OpenCycleMap,
+                      'Thunderforest_Transport': Thunderforest_Transport,
+                      'Thunderforest_TransportDark': Thunderforest_TransportDark,
+                      'OpenMapSurfer_Roads': OpenMapSurfer_Roads,
+                      'Hydda_Base': Hydda_Base,
+                      'MapQuestOpen_Aerial': MapQuestOpen_Aerial,
+                      'Stamen_Toner': Stamen_Toner,
+                      'Stamen_Watercolor': Stamen_Watercolor,
+                      'Esri_WorldStreetMap': Esri_WorldStreetMap,
+                      'Esri_WorldTopoMap': Esri_WorldTopoMap,
+                      'Esri_WorldImagery': Esri_WorldImagery,
+                      'Esri_WorldShadedRelief': Esri_WorldShadedRelief,
+                      'Esri_OceanBasemap': Esri_OceanBasemap,
+                      'Acetate_all': Acetate_all
+                    };
+                    controlCapas = L.control.layers(mapaBase, null);
+                    controlCapas.addTo(map)
+                  }
+                &lt;/script&gt;
+              &lt;/head&gt;
+
+              &lt;body onLoad="init()"&gt;
+                &lt;div id="map"&gt;&lt;/div&gt;
+              &lt;/body&gt;
+
+              &lt;/html&gt;
+        </code></pre>
+        <div class="footnote">
+            <h5><a target="_blank" href="ejemplo2.html" >Ver Ejemplo 2</a></h5>
+        </div>
+            <!--end container -->
+        </div>
+<script>
+
+</script>
+</body>
+
+</html>
