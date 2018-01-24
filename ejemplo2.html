@@ -29,7 +29,6 @@
                     });
                     osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                       maxZoom: 19,
-
                       minZoom: 1,
                       attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                     }).addTo(map);
@@ -115,6 +114,27 @@
                       attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> & USGS'
                     });
 
+                    var Stamen_TonerLines = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lines/{z}/{x}/{y}.{ext}', {
+                      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                      subdomains: 'abcd',
+                      minZoom: 0,
+                      maxZoom: 20,
+                      ext: 'png'
+                    });
+
+                    var Stamen_TonerLabels = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.{ext}', {
+                      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                      subdomains: 'abcd',
+                      minZoom: 0,
+                      maxZoom: 20,
+                      ext: 'png'
+                    });
+
+                    var OpenMapSurfer_AdminBounds = L.tileLayer('https://korona.geog.uni-heidelberg.de/tiles/adminb/x={x}&y={y}&z={z}', {
+                        maxZoom: 19,
+                        attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    });
+
                     var mapaBase = {
                       'OSM': osm,
                       'OpenStreetMap_BlackAndWhite': OpenStreetMap_BlackAndWhite,
@@ -135,9 +155,16 @@
                       'Esri_OceanBasemap': Esri_OceanBasemap,
                       'Acetate_all': Acetate_all
                     };
-                    controlCapas = L.control.layers(mapaBase, null);
+                    var overlayMaps = {
+                      'Stamen.TonerLines': Stamen_TonerLines,
+                      'OpenMapSurfer_AdminBounds': OpenMapSurfer_AdminBounds,
+                      'Stamen_TonerLabels': Stamen_TonerLabels        
+                    };
+
+                    controlCapas = L.control.layers(mapaBase, overlayMaps, {collapsed:false});
                     controlCapas.addTo(map)
                   }
+
                 </script>
               </head>
 

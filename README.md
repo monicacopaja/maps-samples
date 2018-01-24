@@ -1,2 +1,0 @@
-# maps-samples
-Leaflet maps
