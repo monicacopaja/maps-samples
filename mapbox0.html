@@ -1,0 +1,45 @@
+<html lang="es">
+<head>
+  <title>Leaflet y Mapox</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="autor" />
+  <meta name="description" content="descripción página">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <script>
+    var map;
+    var capa1;
+  $(document).ready(function() {
+      map = L.map('map', {
+        center: [41.6863, 1.8382],
+        zoom: 8,
+        attributionControl: false
+      });
+      capa1 = L.tileLayer('https://api.mapbox.com/styles/v1/gismasterm2/cjcumodeg0i4p2rpaihqxx96w/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g', {
+        maxZoom: 19,
+        minZoom: 1,
+        attribution: 'Mapbox'
+      });
+      capa1.addTo(map);
+
+    }); //Fin ready jquey
+  </script>
+</head>
+<body>
+  <div id="map"></div>
+</body>
+</html>

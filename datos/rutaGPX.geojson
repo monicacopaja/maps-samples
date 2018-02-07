@@ -1,5 +1,5 @@
-var rutaGPX={
-    "type": "FeatureCollection",
+    {
+      "type": "FeatureCollection",
     "features": [
         {
             "type": "Feature",
@@ -7,15 +7,15 @@ var rutaGPX={
                 "name": "Fontalba-Puigmal-Nuria-Fontalba",
                 "desc": "19/8/2009. Avui em pujat al Puigmal ( 2910 ) desde Fontalba, unes 2,10 h. Despres de esmorçar seguim camí a Nuria, unes 2 hores mes, i despres de dinar em tornat a Fontalba, en total unes 5,30 de marxa. Dia precios i vistes impresionants.",
                 "time": "2009-08-19T09:10:27Z"
-				
+
             },
 			"style":{
-			
+
              "weight": 2,
             "color": "#FF0000",
             "opacity": 1
-          
-        
+
+
 			},
             "geometry": {
                 "type": "LineString",
@@ -2524,4 +2524,4 @@ var rutaGPX={
             }
         }
     ]
-};
+}

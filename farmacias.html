@@ -1,4 +1,4 @@
- <html lang="es">
+<html lang="es">
               <head>
                 <title>Farmacias</title>
                 <meta charset="utf-8" />
@@ -9,7 +9,7 @@
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <script>
-                  L_PREFER_CANVAS = true;
+                 L_PREFER_CANVAS = true;
                 </script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
                 <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
@@ -40,25 +40,18 @@
                       center: [41.3954, 2.16859],
                       zoom: 14
                     });
-                    
                     esri = L.tileLayer(
                       'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
                         maxZoom: 17,
                         minZoom: 1,
                         attribution: 'Tiles © Esri',
-                      });
-                                     
+                      }).addTo(map);
+
                     osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                       maxZoom: 19,
                       minZoom: 1,
                       attribution: 'OSM'
-                    }); 
-
-                    var CartoDB_Positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-                        attribution: 'CartoDB',
-                        subdomains: 'abcd',
-                        maxZoom: 19
-                    }).addTo(map);                   
+                    });
 
               
                     farmacias = new L.GeoJSON.AJAX('datos/farmacias.geojson', {
@@ -71,31 +64,65 @@
                       pointToLayer: function(feature, latlng) {
                         return L.circleMarker(latlng, {
                           radius: 4,
-                          fillColor: "#ff0000",
+                          fillColor: "#00ff00",
                           color: "#ffffff",
                           weight: 2,
                           opacity: 1,
-                          fillOpacity: 0.7
+                          fillOpacity: 0.8
                         });
                       }
                     }).addTo(map);
               
+
+
+                    cementerio = new L.GeoJSON.AJAX('datos/cementerio.geojson', {
+                      maxZoom: 19,
+                      minZoom: 14,
+                      onEachFeature: function(feature, layer) {
+                        popupContent = "<b>" + feature.properties.AREA + "</b><br>" + feature.properties.PERIMETER + ":" + feature.properties.CEMGI_ID + "</b>";
+                        layer.bindPopup(popupContent);
+                      },
+                      style: function(feature) {
+                          if(feature.properties.AREA > 100){
+                                    return  {                       
+                                    fillColor: "#00ff00",
+                                    color: "#ffffff",
+                                    weight: 2,
+                                    opacity: 1,
+                                    fillOpacity: 0.8
+                                    };
+                          }else{
+
+                            return  {                       
+                                    fillColor: "#ff0000",
+                                    color: "#ffffff",
+                                    weight: 2,
+                                    opacity: 1,
+                                    fillOpacity: 0.8
+                                    };
+
+                          }        
+                      }
+                    });
+
+
+
                     var baseMaps = {
-                       "Orto_esri": esri,
-                        "CartoDB_Positron": CartoDB_Positron,
-                        "Mapa_osm": osm
-                    };                   
-                    
-                    var overlayMaps = {
-                        "Farmacias": farmacias
+                      "Orto_esri": esri,
+                      "Mapa_osm": osm
                     };
-                
-                   
+                    
+                		var overlayMaps = {
+                			"farmacias": farmacias,
+                            "cementerio":cementerio
+                		};
+            
                     controlCapas = L.control.layers(baseMaps, overlayMaps);
                     controlCapas.addTo(map);
                     controlEscala = L.control.scale();
                     controlEscala.addTo(map);
-             
+
+              
 
                     var searchControl = new L.Control.Search({
                       layer: farmacias,
@@ -105,6 +132,7 @@
 
                     map.addControl(searchControl);
               
+
                   });
                 </script>
               </head>
